@@ -1,0 +1,243 @@
+<div class="welcome" fxLayout="row" fxLayout.gt-md="column" fxLayoutGap.gt-md="20px" fxLayoutAlign="left left">
+  <mat-card class="example-card" style="max-width: 1000px">
+    <mat-card-header>
+      <mat-card-title>
+        <a mat-button color="primary" routerLink=".">Party</a>
+        <a mat-button color="primary" routerLink=".">Party Validity</a>
+        <mat-divider></mat-divider>
+      </mat-card-title>
+      
+      <mat-card-subtitle>
+        
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+          
+        <!--mat-toolbar>
+          <mat-toolbar-row>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+              <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle checked value="bold">Party</mat-button-toggle>
+                <mat-button-toggle value="italic">Party Validity</mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+          </mat-toolbar-row> 
+        </mat-toolbar-->
+
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="padding:10px;width:100%;background-image:linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%) ">
+           <mat-form-field style="max-width: 200px;">
+            <input type="text" matInput placeholder="Party Name" ngModel name="partyName" required>
+          </mat-form-field>
+          <mat-form-field style="max-width: 200px">
+            <input type="text" matInput placeholder="Record Status" ngModel name="partyClass" required>
+          </mat-form-field>
+          <mat-form-field style="max-width: 200px">
+            <input type="text" matInput placeholder="Trade Date" ngModel name="TradeDate" required>
+          </mat-form-field>
+          <button mat-raised-button color="primary">Query</button>
+          <button mat-raised-button color="primary">Approve</button>
+
+
+        </div>
+
+        <mat-tab-group>
+          <mat-tab label="General Information">
+            <mat-card class="example-card" style="max-width: 1000px">
+
+              <mat-card-content>
+
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <mat-form-field>
+                    <input type="text" matInput #input maxlength="10" placeholder="Party Name" ngModel name="partyName"
+                      required>
+                    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Party Class" ngModel name="partyClass" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Start Date" ngModel name="startDate" required>
+                  </mat-form-field>
+
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+
+                  <mat-form-field style="width:610px;">
+                    <input type="text" matInput placeholder="Company Name" ngModel name="companyName" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="End Date" ngModel name="endDate" required>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="ACER Code" ngModel name="acerCode" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="EIC Code" ngModel name="eicCode" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Jurisdiction" ngModel name="jurisdiction" required>
+                  </mat-form-field>
+
+
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Place Of Establishment" ngModel name="placeOfEstablishment"
+                      required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="VAT Registration Number" ngModel name="vatRegistrationNumber"
+                      required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="VAT Region" ngModel name="vatRegion" required>
+                  </mat-form-field>
+
+
+                </div>
+
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Record Status" ngModel name="placeOfEstablishment"
+                      required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Application Reference" ngModel name="vatRegistrationNumber"
+                      required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Transaction ID" ngModel name="vatRegion" required>
+                  </mat-form-field>
+
+
+                </div>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>NEXT</button>
+              </mat-card-actions>
+            </mat-card>
+          </mat-tab>
+          <mat-tab label="Address Information">
+            <mat-card class="example-card" style="max-width: 1000px">
+
+              <mat-card-content>
+
+                <mat-tab-group>
+                  <mat-tab label="Company Address">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                      <mat-form-field style="min-width: 900px;">
+                        <input type="text" matInput placeholder="Address Line 1" ngModel name="addressLine1" required>
+                      </mat-form-field>
+                      <mat-form-field style="min-width: 900px;">
+                        <input type="text" matInput placeholder="Address Line 2" ngModel name="addressLine2" required>
+                      </mat-form-field>
+                      <mat-form-field style="min-width: 900px;">
+                        <input type="text" matInput placeholder="Address Line 3" ngModel name="addressLine3" required>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="City" ngModel name="city" required>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="County Class" ngModel name="county" required>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="Postal Code" ngModel name="postalCode" required>
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="Country" ngModel name="country" required>
+                      </mat-form-field>
+                    </div>
+                  </mat-tab>
+                  <mat-tab label="Mailing Address">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                      <mat-form-field style="min-width: 900px;">
+                        <input type="text" matInput placeholder="Address Line 1" ngModel name="addressLine1" required>
+                      </mat-form-field>
+                      <mat-form-field style="min-width: 900px;">
+                        <input type="text" matInput placeholder="Address Line 2" ngModel name="addressLine2" required>
+                      </mat-form-field>
+                      <mat-form-field style="min-width: 900px;">
+                        <input type="text" matInput placeholder="Address Line 3" ngModel name="addressLine3" required>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="City" ngModel name="city" required>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="County Class" ngModel name="county" required>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="Postal Code" ngModel name="postalCode" required>
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="Country" ngModel name="country" required>
+                      </mat-form-field>
+                    </div>
+                  </mat-tab>
+                </mat-tab-group>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>PREV</button>
+                <button mat-button>NEXT</button>
+              </mat-card-actions>
+            </mat-card>
+
+          </mat-tab>
+          <mat-tab label="Registration Agreement">
+            <mat-card class="example-card" style="max-width: 1000px">
+
+              <mat-card-content>
+
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <mat-form-field>
+                    <input type="text" matInput placeholder="Payment Reference" ngModel name="partyName" required>
+                  </mat-form-field>
+                  <mat-checkbox>Fee Submitted</mat-checkbox>
+
+
+                  <mat-form-field style="width:900px;">
+                    <input type="text" matInput placeholder="Comments" ngModel name="startDate" required>
+                  </mat-form-field>
+
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </mat-tab>
+
+          <mat-tab label="Attachment Information">
+            <mat-card class="example-card" style="max-width: 1000px">
+
+              <mat-card-content>
+
+                <mat-selection-list #shoes>
+                  <mat-list-option>Document1
+                  </mat-list-option>
+                  <mat-list-option>Document2
+                  </mat-list-option>
+                  <mat-list-option>Document3
+                  </mat-list-option>
+                  <mat-list-option>Document4
+                  </mat-list-option>
+                  <mat-list-option>Document5
+                  </mat-list-option>
+                </mat-selection-list>
+
+
+              </mat-card-content>
+            </mat-card>
+          </mat-tab>
+
+        </mat-tab-group>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
