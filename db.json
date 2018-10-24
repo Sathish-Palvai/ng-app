@@ -1,0 +1,23 @@
+{
+    "parties": [
+        {
+        "id": 1,
+        "name": "Customer001",
+        "age": "20",
+        "active": "true"
+        },
+        {
+        "id": 2,
+        "name": "Customer002",
+        "age": "22",
+        "active": "true"
+        },
+        {
+        "id": 3,
+        "name": "Customer003",
+        "age": "23",
+        "active": "false"
+        }
+
+    ]
+}

@@ -1,20 +1,14 @@
-<div class="welcome" fxLayout="row" fxLayout.gt-md="column" fxLayoutGap.gt-md="20px" fxLayoutAlign="left left">
-  <mat-card class="example-card" style="max-width: 1000px">
-    <mat-card-header>
-      <mat-card-title>
-        <a mat-button color="primary" routerLink=".">Party</a>
-        <a mat-button color="primary" routerLink=".">Party Validity</a>
-        <mat-divider></mat-divider>
-      </mat-card-title>
-      
-      <mat-card-subtitle>
-        
-      </mat-card-subtitle>
-    </mat-card-header>
+<div class="welcome" fxLayout="row" fxLayout.gt-md="column" fxLayoutGap.gt-md="20px" fxLayoutAlign="left left" 
+   >
+  <mat-card class="example-card" style="max-width: 1000px;">
+    <nav mat-tab-nav-bar [backgroundColor]="background">
+      <a mat-tab-link *ngFor="let link of links" (click)="activeLink = link" [active]="activeLink == link"> {{link}}
+      </a>
+    </nav>
 
     <mat-card-content>
-      <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
-          
+      <div fxLayout="row wrap" fxLayoutAlign="start center" >
+
         <!--mat-toolbar>
           <mat-toolbar-row>
             <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
@@ -26,8 +20,8 @@
           </mat-toolbar-row> 
         </mat-toolbar-->
 
-        <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="padding:10px;width:100%;background-image:linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%) ">
-           <mat-form-field style="max-width: 200px;">
+        <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="padding:10px;width:100%;background:#f7f7f7">
+          <mat-form-field style="max-width: 200px;">
             <input type="text" matInput placeholder="Party Name" ngModel name="partyName" required>
           </mat-form-field>
           <mat-form-field style="max-width: 200px">
@@ -43,12 +37,12 @@
         </div>
 
         <mat-tab-group>
-          <mat-tab label="General Information">
+          <mat-tab label="General Information" style="background:#f7f7f7">
             <mat-card class="example-card" style="max-width: 1000px">
 
-              <mat-card-content>
+              <mat-card-content >
 
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-top:10px;padding-left:10px">
                   <mat-form-field>
                     <input type="text" matInput #input maxlength="10" placeholder="Party Name" ngModel name="partyName"
                       required>
@@ -62,7 +56,7 @@
                   </mat-form-field>
 
                 </div>
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px">
 
                   <mat-form-field style="width:610px;">
                     <input type="text" matInput placeholder="Company Name" ngModel name="companyName" required>
@@ -71,7 +65,7 @@
                     <input type="text" matInput placeholder="End Date" ngModel name="endDate" required>
                   </mat-form-field>
                 </div>
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px">
                   <mat-form-field>
                     <input type="text" matInput placeholder="ACER Code" ngModel name="acerCode" required>
                   </mat-form-field>
@@ -84,7 +78,7 @@
 
 
                 </div>
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px">
                   <mat-form-field>
                     <input type="text" matInput placeholder="Place Of Establishment" ngModel name="placeOfEstablishment"
                       required>
@@ -100,7 +94,7 @@
 
                 </div>
 
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px">
                   <mat-form-field>
                     <input type="text" matInput placeholder="Record Status" ngModel name="placeOfEstablishment"
                       required>
@@ -126,9 +120,9 @@
 
               <mat-card-content>
 
-                <mat-tab-group>
+                <mat-tab-group [backgroundColor]="background">
                   <mat-tab label="Company Address">
-                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px;padding-top:10px;">
                       <mat-form-field style="min-width: 900px;">
                         <input type="text" matInput placeholder="Address Line 1" ngModel name="addressLine1" required>
                       </mat-form-field>
@@ -139,7 +133,7 @@
                         <input type="text" matInput placeholder="Address Line 3" ngModel name="addressLine3" required>
                       </mat-form-field>
                     </div>
-                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px;">
                       <mat-form-field>
                         <input type="text" matInput placeholder="City" ngModel name="city" required>
                       </mat-form-field>
@@ -155,8 +149,8 @@
                       </mat-form-field>
                     </div>
                   </mat-tab>
-                  <mat-tab label="Mailing Address">
-                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <mat-tab label="Mailing Address" style="background:#f7f7f7">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px;padding-top:10px;">
                       <mat-form-field style="min-width: 900px;">
                         <input type="text" matInput placeholder="Address Line 1" ngModel name="addressLine1" required>
                       </mat-form-field>
@@ -167,7 +161,7 @@
                         <input type="text" matInput placeholder="Address Line 3" ngModel name="addressLine3" required>
                       </mat-form-field>
                     </div>
-                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px;">
                       <mat-form-field>
                         <input type="text" matInput placeholder="City" ngModel name="city" required>
                       </mat-form-field>
@@ -197,7 +191,7 @@
 
               <mat-card-content>
 
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px" style="background:#f7f7f7;padding-left:10px;padding-top:10px">
                   <mat-form-field>
                     <input type="text" matInput placeholder="Payment Reference" ngModel name="partyName" required>
                   </mat-form-field>

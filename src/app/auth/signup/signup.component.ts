@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-
+import { DataService} from '../../shared/data.service';
 import { AuthService } from '../auth.service';
 import { UIService } from '../../shared/ui.service';
 import * as fromRoot from '../../app.reducer';
@@ -15,10 +15,14 @@ import * as fromRoot from '../../app.reducer';
 export class SignupComponent implements OnInit {
   maxDate;
   isLoading$: Observable<boolean>;
-  background = 'primary'
+  links = ['Party', 'PartyValidity'];
+  activeLink = this.links[0];
+  background = 'accent';
 
+ 
   constructor(
     private authService: AuthService,
+    private dataService: DataService,
     private uiService: UIService,
     private store: Store<fromRoot.State>
   ) {}
@@ -27,6 +31,8 @@ export class SignupComponent implements OnInit {
     this.isLoading$ = this.store.select(fromRoot.getIsLoading);
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
+
+    this.dataService.showPartyResponse();
   }
 
   onSubmit(form: NgForm) {
